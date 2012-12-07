@@ -106,6 +106,12 @@ class Reflect
 	public $ancestry;
 
 	/**
+	 * Storage for class traits
+	 * @type array
+	 */
+	public $traits;
+
+	/**
 	 * Storage for mapping of aliases to namespaces.
 	 * @type array
 	 */
@@ -130,7 +136,10 @@ class Reflect
 
 		$this->inheritance = $this->ancestry->getInheritance();
 		$this->implements  = $this->ancestry->getImplementations();
-		$this->traits      = $this->ancestry->getTraits();
+		if (SystemStore::get('_.php54'))
+		{
+			$this->traits      = $this->ancestry->getTraits();
+		}
 		$this->aliases     = $this->ancestry->getNamespaces();
 
 		$this->constants   = new ConstantHandler($this->rclass, $this->ancestry);
