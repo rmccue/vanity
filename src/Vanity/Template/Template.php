@@ -172,8 +172,8 @@ abstract class Template implements TemplateInterface
 			{
 				$filesystem->copy(
 					$asset->getRealPath(),
-					GenerateUtils::getAbsoluteBasePath($nameOfFormatterEvent) . '/' . str_replace(
-						GenerateUtils::findStaticAssetsFor($calledClass). '/',
+					GenerateUtils::getAbsoluteBasePath($nameOfFormatterEvent) . DIRECTORY_SEPARATOR . str_replace(
+						GenerateUtils::findStaticAssetsFor($calledClass). DIRECTORY_SEPARATOR,
 						'',
 						$asset->getRealPath()
 					)

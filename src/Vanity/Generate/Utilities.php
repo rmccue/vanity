@@ -51,7 +51,7 @@ class Utilities
 	{
 		$rclass = new ReflectionClass($namespace);
 
-		return dirname($rclass->getFileName()) . '/template';
+		return dirname($rclass->getFileName()) . DIRECTORY_SEPARATOR . 'template';
 	}
 
 	/**
@@ -64,7 +64,7 @@ class Utilities
 	{
 		$rclass = new ReflectionClass($namespace);
 
-		return dirname($rclass->getFileName()) . '/static';
+		return dirname($rclass->getFileName()) . DIRECTORY_SEPARATOR . 'static';
 	}
 
 	/**
